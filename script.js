@@ -10,44 +10,71 @@ function gameBoard() {
         }
     }
 
-    function addToken(row, column) {
-        let token = gameController().currentPlayer;
+    function addToken(row, column) { 
+
+        const token = gameController().switchPlayer()
         board[row].splice(column, 1, token);
         console.log(board);
+
     }
 
-    const getBoard = () => board; // console log doesn't work without board
+    const getBoard = () => board;
 
-    return { addToken, getBoard };
+    return {
+        addToken,
+        getBoard
+    };
 
 }
 
-function gameController() {
+let activePlayer; // why is this always undefined
 
-    const board = gameBoard()
+function gameController(firstPlayer, secondPlayer) {
 
-    const players = [{ player: 'first player', token: "x" }, { player: 'second player', token: "o" }];
-    let currentPlayer = players[0].token;
+    const players = [
+        {
+            player: firstPlayer,
+            token: "x"
+        },
+        {
+            player: secondPlayer,
+            token: "o"
+        }
+    ];
 
-    const switchPlayer = () => {
-        currentPlayer = currentPlayer == players[0].token ? players[1].token : players[0].token;
+    function switchPlayer() {
+
+        if (activePlayer == undefined) {
+            activePlayer = players[0].token;
+        }
+        else if (activePlayer == players[0].token) {
+            activePlayer = players[1].token;
+        }
+        else if (activePlayer == players[1].token) {
+            activePlayer = players[0].token;
+        }
+        else {
+            false;
+        }
+
+        return activePlayer, console.log(activePlayer + '`s turn');
     }
 
-    const updateBoard = () => board.addToken;
+    const board = gameBoard();
+    const fetchToken = () => board.addToken;
 
-    return { currentPlayer, updateBoard };
+    /* revising code */
+    function addToken(row, column, getActivePlayer) {
+        
+    }
+
+    return {
+        fetchToken,
+        switchPlayer
+    };
 
 }
 
-/*
-const game = gameBoard().addToken
-game(1, 1); // ['', 'x', '']
-game(0, 0); 
-*/
-
-/*
-gameBoard().getBoard // ['', '', ''], () => board
-*/
-
-const play = gameController().updateBoard()
-play(1, 1); 
+const play = gameController()
+play.fetchToken()(1, 1);
+play.fetchToken()(0, 0);
