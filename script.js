@@ -3,6 +3,8 @@ function gameBoard() {
     const rows = 3;
     const columns = 3;
 
+    const getBoard = () => board;
+
     for (i = 0; i < rows; i++) {
         board.push([]);
         for (j = 0; j < columns; j++) {
@@ -10,34 +12,31 @@ function gameBoard() {
         }
     }
 
-    function addToken(row, column) { 
-
-        const token = gameController().switchPlayer()
-        board[row].splice(column, 1, token);
+    function updateBoard(row, column) {
+        board[row].splice(column, 1, activePlayer);
         console.log(board);
-
     }
 
-    const getBoard = () => board;
-
     return {
-        addToken,
+        updateBoard,
         getBoard
     };
 
 }
 
-let activePlayer; // why is this always undefined
+let activePlayer;
 
-function gameController(firstPlayer, secondPlayer) {
+function gameController() {
+
+    const board = gameBoard();
 
     const players = [
         {
-            player: firstPlayer,
+            player: 'firstPlayer',
             token: "x"
         },
         {
-            player: secondPlayer,
+            player: 'secondPlayer',
             token: "o"
         }
     ];
@@ -60,21 +59,21 @@ function gameController(firstPlayer, secondPlayer) {
         return activePlayer, console.log(activePlayer + '`s turn');
     }
 
-    const board = gameBoard();
-    const fetchToken = () => board.addToken;
+    /* revise code */
+    const addToken = (row, column) => {
 
-    /* revising code */
-    function addToken(row, column, getActivePlayer) {
+        switchPlayer();
+        board.updateBoard(row, column);
         
     }
 
     return {
-        fetchToken,
-        switchPlayer
+        players,
+        addToken
     };
 
 }
 
 const play = gameController()
-play.fetchToken()(1, 1);
-play.fetchToken()(0, 0);
+play.addToken(1, 1);
+play.addToken(0, 0);
