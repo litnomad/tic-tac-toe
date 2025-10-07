@@ -13,14 +13,14 @@ function gameBoard() {
     }
 
     function updateBoard(row, column) {
-        board[row].splice(column, 1, activePlayer);
+        board[row].splice(column, 1, activePlayer.token);
         console.log(board);
     }
 
     return {
         updateBoard,
         getBoard
-    };
+    }
 
 }
 
@@ -39,41 +39,41 @@ function gameController() {
             player: 'secondPlayer',
             token: "o"
         }
-    ];
+    ]
 
     function switchPlayer() {
 
         if (activePlayer == undefined) {
-            activePlayer = players[0].token;
+            activePlayer = players[0];
         }
-        else if (activePlayer == players[0].token) {
-            activePlayer = players[1].token;
+        else if (activePlayer == players[0]) {
+            activePlayer = players[1];
         }
-        else if (activePlayer == players[1].token) {
-            activePlayer = players[0].token;
+        else if (activePlayer == players[1]) {
+            activePlayer = players[0];
         }
         else {
             false;
         }
 
-        return activePlayer, console.log(activePlayer + '`s turn');
+        return activePlayer, console.log(`${activePlayer.player}` + '`s turn');
     }
 
     /* revise code */
     const addToken = (row, column) => {
 
         switchPlayer();
+
         board.updateBoard(row, column);
-        
+
     }
 
     return {
-        players,
         addToken
-    };
+    }
 
 }
 
-const play = gameController()
+const play = gameController();
 play.addToken(1, 1);
 play.addToken(0, 0);
