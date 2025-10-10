@@ -15,6 +15,63 @@ function gameBoard() {
     function updateBoard(row, column) {
         board[row].splice(column, 1, activePlayer.token);
         console.log(board);
+        win();
+    }
+
+    function win() {
+        const players = gameController().players;
+        // for first player
+        if (board[0][0] == players[0].token && board[0][1] == players[0].token && board[0][2] == players[0].token) {
+            console.log(`${players[0].player}` + ' wins!');
+        }
+        else if (board[1][0] == players[0].token && board[1][1] == players[0].token && board[1][2] == players[0].token) {
+            console.log(`${players[0].player}` + ' wins!');
+        }
+        else if (board[2][0] == players[0].token && board[2][1] == players[0].token && board[2][2] == players[0].token) {
+            console.log(`${players[0].player}` + ' wins!');
+        }
+        else if (board[0][0] == players[0].token && board[1][0] == players[0].token && board[2][0] == players[0].token) {
+            console.log(`${players[0].player}` + ' wins!');
+        }
+        else if (board[0][1] == players[0].token && board[1][1] == players[0].token && board[2][1] == players[0].token) {
+            console.log(`${players[0].player}` + ' wins!');
+        }
+        else if (board[0][2] == players[0].token && board[1][2] == players[0].token && board[2][2] == players[0].token) {
+            console.log(`${players[0].player}` + ' wins!');
+        }
+        else if (board[0][0] == players[0].token && board[1][1] == players[0].token && board[2][2] == players[0].token) {
+            console.log(`${players[0].player}` + ' wins!');
+        }
+        else if (board[0][2] == players[0].token && board[1][1] == players[0].token && board[2][0] == players[0].token) {
+            console.log(`${players[0].player}` + ' wins!');
+        }
+        // for second player
+        else if (board[0][0] == players[1].token && board[0][1] == players[1].token && board[0][2] == players[1].token) {
+            console.log(`${players[1].player}` + ' wins!');
+        }
+        else if (board[1][0] == players[1].token && board[1][1] == players[1].token && board[1][2] == players[1].token) {
+            console.log(`${players[1].player}` + ' wins!');
+        }
+        else if (board[2][0] == players[1].token && board[2][1] == players[1].token && board[2][2] == players[1].token) {
+            console.log(`${players[1].player}` + ' wins!');
+        }
+        else if (board[0][0] == players[1].token && board[1][0] == players[1].token && board[2][0] == players[1].token) {
+            console.log(`${players[1].player}` + ' wins!');
+        }
+        else if (board[0][1] == players[1].token && board[1][1] == players[1].token && board[2][1] == players[1].token) {
+            console.log(`${players[1].player}` + ' wins!');
+        }
+        else if (board[0][2] == players[1].token && board[1][2] == players[1].token && board[2][2] == players[1].token) {
+            console.log(`${players[1].player}` + ' wins!');
+        }
+        else if (board[0][0] == players[1].token && board[1][1] == players[1].token && board[2][2] == players[1].token) {
+            console.log(`${players[1].player}` + ' wins!');
+        }
+        else if (board[0][2] == players[1].token && board[1][1] == players[1].token && board[2][0] == players[1].token) {
+            console.log(`${players[1].player}` + ' wins!');
+        }
+        else { null; }
+
     }
 
     return {
@@ -69,11 +126,14 @@ function gameController() {
     }
 
     return {
+        players,
         addToken
     }
 
 }
 
-const play = gameController();
-play.addToken(1, 1);
-play.addToken(0, 0);
+const play = gameController().addToken;
+play(1, 1);
+play(0, 0);
+play(1, 0);
+play(0, 1);
