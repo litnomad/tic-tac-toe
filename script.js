@@ -19,6 +19,8 @@ function gameBoard() {
             board[row].splice(column, 1, activePlayer.token);
             console.log(board);
             console.log(`${activePlayer.player}` + '`s turn');
+            text.innerHTML = `${activePlayer.player}` + '`s turn';
+            header.appendChild(text);
         }
         else {
             null;
@@ -33,99 +35,99 @@ function gameBoard() {
         if (board[0][0] == players[0].token && board[0][1] == players[0].token && board[0][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
-            winText.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[0].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[1][0] == players[0].token && board[1][1] == players[0].token && board[1][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
-            winText.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[0].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[2][0] == players[0].token && board[2][1] == players[0].token && board[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
-            winText.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[0].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][0] == players[0].token && board[1][0] == players[0].token && board[2][0] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
-            winText.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[0].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][1] == players[0].token && board[1][1] == players[0].token && board[2][1] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
-            winText.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[0].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][2] == players[0].token && board[1][2] == players[0].token && board[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
-            winText.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[0].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][0] == players[0].token && board[1][1] == players[0].token && board[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
-            winText.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[0].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][2] == players[0].token && board[1][1] == players[0].token && board[2][0] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
-            winText.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[0].player}` + ' wins!';
+            header.appendChild(text);
         }
         // for second player
         else if (board[0][0] == players[1].token && board[0][1] == players[1].token && board[0][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
-            winText.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[1].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[1][0] == players[1].token && board[1][1] == players[1].token && board[1][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
-            winText.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[1].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[2][0] == players[1].token && board[2][1] == players[1].token && board[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
-            winText.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[1].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][0] == players[1].token && board[1][0] == players[1].token && board[2][0] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
-            winText.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[1].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][1] == players[1].token && board[1][1] == players[1].token && board[2][1] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
-            winText.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[1].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][2] == players[1].token && board[1][2] == players[1].token && board[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
-            winText.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[1].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][0] == players[1].token && board[1][1] == players[1].token && board[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
-            winText.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[1].player}` + ' wins!';
+            header.appendChild(text);
         }
         else if (board[0][2] == players[1].token && board[1][1] == players[1].token && board[2][0] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
-            winText.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(winText);
+            text.innerHTML = `${players[1].player}` + ' wins!';
+            header.appendChild(text);
         }
         else { false; }
 
@@ -140,7 +142,7 @@ function gameBoard() {
 
 let activePlayer;
 
-function gameController(firstPlayer) {
+function gameController(firstPlayer = 'First player') {
 
     const board = gameBoard();
 
@@ -191,14 +193,14 @@ function gameController(firstPlayer) {
 
 const play = gameController();
 
-
 // attach game to DOM element 
 const header = document.querySelector('header');
 const buttons = document.querySelectorAll('#cell');
-const winText = document.createElement('h3');
+const text = document.createElement('h3');
 const submit = document.querySelector('.submit');
+const startBtn = document.querySelector('.start');
 
-winText.style.color = 'red';
+text.style.color = 'red';
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -218,4 +220,9 @@ submit.addEventListener('click', (e) => {
     play.players[0].player = firstPlayer;
 
     e.preventDefault();
+})
+
+// start restart button
+startBtn.addEventListener('click', () => {
+    // set 'cell' attribute to buttons?
 })
