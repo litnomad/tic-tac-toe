@@ -146,7 +146,7 @@ function gameController(firstPlayer = 'First player') {
 
     const board = gameBoard();
 
-    const players = 
+    const players =
         [
             {
                 player: firstPlayer,
@@ -195,24 +195,33 @@ const play = gameController();
 
 // attach game to DOM element 
 const header = document.querySelector('header');
-const buttons = document.querySelectorAll('#cell');
 const text = document.createElement('h3');
 const submit = document.querySelector('.submit');
 const startBtn = document.querySelector('.start');
+const resetBtn = document.querySelector('.reset');
+const container = document.querySelector('.container');
 
 text.style.color = 'red';
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        play.addToken(button.dataset.row, button.dataset.column);
+// reset button returns grid to base
 
-        if (!button.innerText) {
-            button.innerText = activePlayer.token;
-        }
+// start button changes inactive to active
+startBtn.addEventListener('click', () => {
+    container.querySelectorAll('button').forEach((button) => {
+        button.classList.replace('inactive', 'active');
+    })
+})
+
+container.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target.matches('button.active')) {
+        play.addToken(target.dataset.row, target.dataset.column);
+
+            if (!target.innerText) {
+                target.innerText = activePlayer.token;
+            }
     }
-    )
-}
-)
+})
 
 // user enters player name 
 submit.addEventListener('click', (e) => {
@@ -220,9 +229,4 @@ submit.addEventListener('click', (e) => {
     play.players[0].player = firstPlayer;
 
     e.preventDefault();
-})
-
-// start restart button
-startBtn.addEventListener('click', () => {
-    // set 'cell' attribute to buttons?
 })
