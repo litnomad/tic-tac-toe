@@ -1,5 +1,5 @@
 function gameBoard() {
-    const board = [];
+    let board = [];
     const rows = 3;
     const columns = 3;
 
@@ -133,9 +133,14 @@ function gameBoard() {
 
     }
 
+    const reset = function () {
+        board = [];
+    }
+
     return {
         updateBoard,
-        getBoard
+        getBoard,
+        reset
     }
 
 }
@@ -203,7 +208,16 @@ const container = document.querySelector('.container');
 
 text.style.color = 'red';
 
-// reset button returns grid to base
+// reset button clears board
+resetBtn.addEventListener('click', () => {
+    gameBoard().reset();
+
+    container.querySelectorAll('button').forEach((button) => {
+        button.innerText = ''
+    });
+
+    header.removeChild(text);
+})
 
 // start button changes inactive to active
 startBtn.addEventListener('click', () => {
@@ -217,9 +231,9 @@ container.addEventListener('click', (e) => {
     if (target.matches('button.active')) {
         play.addToken(target.dataset.row, target.dataset.column);
 
-            if (!target.innerText) {
-                target.innerText = activePlayer.token;
-            }
+        if (!target.innerText) {
+            target.innerText = activePlayer.token;
+        }
     }
 })
 
