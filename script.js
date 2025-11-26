@@ -214,7 +214,7 @@ function gameController(firstPlayer = 'First player') {
 
 const play = gameController();
 
-// DOM to allow user to play with the console through the webpage starts here
+// DOM to allow user to play with the console through contents of the webpage starts here
 
 const header = document.querySelector('header');
 const text = document.createElement('h3');
@@ -256,11 +256,10 @@ container.addEventListener('click', (e) => {
 
 // submit username
 submit.addEventListener('click', (e) => {
-    const input = document.querySelector('#name').value;
+    const username = document.querySelector('input[id="name"]').value;
 
-    play.players[0].player = input.value;
-
-    input = '';
+    play.players[0].player = username;
+    document.querySelector('input[id="name"]').value = '';
 
     e.preventDefault();
 })
