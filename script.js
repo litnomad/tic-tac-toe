@@ -96,48 +96,81 @@ function gameController(firstPlayer = 'First player (x)') {
 
             text.innerHTML = `${players[0].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
+
         }
         else if (board.getBoard()[1][0] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[1][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[2][0] == players[0].token && board.getBoard()[2][1] == players[0].token && board.getBoard()[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][0] == players[0].token && board.getBoard()[1][0] == players[0].token && board.getBoard()[2][0] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][1] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[2][1] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][2] == players[0].token && board.getBoard()[1][2] == players[0].token && board.getBoard()[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][0] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][2] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[2][0] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         // second player
         else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[0][1] == players[1].token && board.getBoard()[0][2] == players[1].token) {
@@ -145,48 +178,80 @@ function gameController(firstPlayer = 'First player (x)') {
 
             text.innerHTML = `${players[1].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[1][0] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[1][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[2][0] == players[1].token && board.getBoard()[2][1] == players[1].token && board.getBoard()[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[1][0] == players[1].token && board.getBoard()[2][0] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][1] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[2][1] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][2] == players[1].token && board.getBoard()[1][2] == players[1].token && board.getBoard()[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else if (board.getBoard()[0][2] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[2][0] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
         else { false; }
 
