@@ -223,7 +223,7 @@ const startBtn = document.querySelector('.start');
 const resetBtn = document.querySelector('.reset');
 const container = document.querySelector('.container');
 
-text.style.color = 'red';
+text.style.color = 'black';
 
 // reset button 
 resetBtn.addEventListener('click', () => {
