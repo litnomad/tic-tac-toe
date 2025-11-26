@@ -40,7 +40,7 @@ function gameBoard() {
             console.log(board);
             console.log(`${activePlayer.player}` + '`s turn');
             text.innerHTML = `${activePlayer.player}` + '`s turn';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else {
             null;
@@ -98,98 +98,98 @@ function gameController(firstPlayer = 'First player') {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[1][0] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[1][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[2][0] == players[0].token && board.getBoard()[2][1] == players[0].token && board.getBoard()[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][0] == players[0].token && board.getBoard()[1][0] == players[0].token && board.getBoard()[2][0] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][1] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[2][1] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][2] == players[0].token && board.getBoard()[1][2] == players[0].token && board.getBoard()[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][0] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][2] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[2][0] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         // second player
         else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[0][1] == players[1].token && board.getBoard()[0][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[1][0] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[1][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[2][0] == players[1].token && board.getBoard()[2][1] == players[1].token && board.getBoard()[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[1][0] == players[1].token && board.getBoard()[2][0] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][1] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[2][1] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][2] == players[1].token && board.getBoard()[1][2] == players[1].token && board.getBoard()[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else if (board.getBoard()[0][2] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[2][0] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
-            header.appendChild(text);
+            div.appendChild(text);
         }
         else { false; }
 
@@ -216,7 +216,7 @@ const play = gameController();
 
 // DOM to allow user to play with the console through contents of the webpage starts here
 
-const header = document.querySelector('header');
+const div = document.querySelector('.results');
 const text = document.createElement('h3');
 const submit = document.querySelector('.submit');
 const startBtn = document.querySelector('.start');
