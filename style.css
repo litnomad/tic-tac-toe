@@ -4,30 +4,118 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Dogica';
+    src: url('fonts/Dogica.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dogica Pixel';
+    src: url('fonts/Dogica_Pixel.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dogica Pixel';
+    src: url('fonts/Dogica_Pixel_Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dogica';
+    src: url('fonts/Dogica.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
+    background-color: plum;
     height: 100vh;
     display: flex;
-    gap: 50px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
 
-header{
-    width: 300px;
+h1 {
+    font-family: 'Dogica Pixel', sans-serif;
+    font-weight: bold;
+    background-color: cornflowerblue;
 }
 
-.inactive, .active {
+header {
+    width: 234px;
+}
+
+p.name {
+    font-family: 'Dogica Pixel', sans-serif;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 1rem;
+    margin: 0 5px 5px; /* top, right-left, bottom */
+}
+
+.form {
+    width: fit-content;
+    padding: 5px;
+    border: 5px solid cornflowerblue;
+}
+
+input {
+    font-family: sans-serif;
+    margin-bottom: 4px;
+}
+
+.results {
+    font-family: 'Dogica Pixel', sans-serif;
+}
+
+button {
+    font-family: 'Dogica Pixel', sans-serif;
+}
+
+.box {
+    display: flex;
+    gap: 10px;
+}
+
+.start {
+    background-color: cornflowerblue;
+    border: 5px outset plum;
+    width: 100px;
+    font-size: 16px;
+}
+
+.reset {
+    border: 5px outset plum;
+    font-size: 16px;
+}
+
+.start:active,
+.reset:active {
+    border: 5px inset plum;
+}
+
+.inactive,
+.active {
+    background-color: cornflowerblue;
+    border: 5px outset plum;
     height: 150px;
     width: 150px;
     font-size: 50px;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    border: 1px solid black;
-    width: 85%;
-    padding: 3px 0px;
+.active:hover {
+    background-color: plum;
+    border: 5px inset plum;
 }
 
 div[data-row] {
