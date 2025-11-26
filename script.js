@@ -33,14 +33,11 @@ function gameBoard() {
             text.innerHTML = '';
 
         }
-        
+
         // add token if empty
         if (row != 'reset' && column != 'reset' && board[row][column] === '') {
             board[row].splice(column, 1, activePlayer.token);
             console.log(board);
-            console.log(`${activePlayer.player}` + '`s turn');
-            text.innerHTML = `${activePlayer.player}` + '`s turn';
-            div.appendChild(text);
         }
         else {
             null;
@@ -57,7 +54,7 @@ function gameBoard() {
 
 let activePlayer;
 
-function gameController(firstPlayer = 'First player') {
+function gameController(firstPlayer = 'First player (x)') {
 
     const board = gameBoard();
 
@@ -68,7 +65,7 @@ function gameController(firstPlayer = 'First player') {
                 token: "x"
             },
             {
-                player: 'Second player',
+                player: 'Second player (o)',
                 token: "o"
             }
         ]
@@ -200,6 +197,18 @@ function gameController(firstPlayer = 'First player') {
         playerSwitcher();
 
         board.updateBoard(row, column);
+
+        // display next player's turn
+        if (activePlayer === players[0]) {
+            console.log(`${players[1].player}` + '`s turn');
+            text.innerHTML = `${players[1].player}` + '`s turn';
+            div.appendChild(text);
+        }
+        else if (activePlayer === players[1]) {
+            console.log(`${players[0].player}` + '`s turn');
+            text.innerHTML = `${players[0].player}` + '`s turn';
+            div.appendChild(text);
+        }
 
         checkWinCondition();
 
