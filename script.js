@@ -1,3 +1,5 @@
+// playable on the console 
+
 function gameBoard() {
     let board = [];
     const rows = 3;
@@ -32,7 +34,7 @@ function gameBoard() {
 
         }
         
-        // will only add token to empty square
+        // add token if empty
         if (row != 'reset' && column != 'reset' && board[row][column] === '') {
             board[row].splice(column, 1, activePlayer.token);
             console.log(board);
@@ -47,8 +49,8 @@ function gameBoard() {
     }
 
     return {
-        updateBoard,
-        getBoard
+        getBoard,
+        updateBoard
     }
 
 }
@@ -71,7 +73,7 @@ function gameController(firstPlayer = 'First player') {
             }
         ]
 
-    function switchPlayer() {
+    function playerSwitcher() {
 
         if (activePlayer == undefined) {
             activePlayer = players[0];
@@ -89,11 +91,9 @@ function gameController(firstPlayer = 'First player') {
         return activePlayer;
     }
 
-    function win() {
-        // const players = gameController().players;
+    function checkWinCondition() {
 
-        console.log(board.getBoard());
-        // for first player
+        // first player
         if (board.getBoard()[0][0] == players[0].token && board.getBoard()[0][1] == players[0].token && board.getBoard()[0][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
@@ -142,7 +142,7 @@ function gameController(firstPlayer = 'First player') {
             text.innerHTML = `${players[0].player}` + ' wins!';
             header.appendChild(text);
         }
-        // for second player
+        // second player
         else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[0][1] == players[1].token && board.getBoard()[0][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
@@ -197,11 +197,11 @@ function gameController(firstPlayer = 'First player') {
 
     const addToken = (row, column) => {
 
-        switchPlayer();
+        playerSwitcher();
 
         board.updateBoard(row, column);
 
-        win();
+        checkWinCondition();
 
     }
 
@@ -214,7 +214,8 @@ function gameController(firstPlayer = 'First player') {
 
 const play = gameController();
 
-// attach game to DOM element 
+// DOM to allow user to play with the console through the webpage starts here
+
 const header = document.querySelector('header');
 const text = document.createElement('h3');
 const submit = document.querySelector('.submit');
@@ -224,7 +225,7 @@ const container = document.querySelector('.container');
 
 text.style.color = 'red';
 
-// reset button clears board
+// reset button 
 resetBtn.addEventListener('click', () => {
     play.addToken('reset', 'reset');
 
@@ -234,13 +235,14 @@ resetBtn.addEventListener('click', () => {
 
 })
 
-// start button changes inactive to active
+// start button activates board 
 startBtn.addEventListener('click', () => {
     container.querySelectorAll('button').forEach((button) => {
         button.classList.replace('inactive', 'active');
     })
 })
 
+// click a button on the board to add token
 container.addEventListener('click', (e) => {
     let target = e.target;
     if (target.matches('button.active')) {
@@ -252,11 +254,13 @@ container.addEventListener('click', (e) => {
     }
 })
 
-// user enters player name 
+// submit username
 submit.addEventListener('click', (e) => {
-    const firstPlayer = document.querySelector('#name').value;
+    const input = document.querySelector('#name').value;
 
-    play.players[0].player = firstPlayer;
+    play.players[0].player = input.value;
+
+    input = '';
 
     e.preventDefault();
 })
