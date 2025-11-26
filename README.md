@@ -1,6 +1,6 @@
 # tic tac toe
 
-The objective of this project is to create a tic tac toe game by putting into practice what I have learned about factory functions and objects, ensuring that objects are used to control the flow of the game and players are stored in objects. The goal is to have as little global code as possible by hiding them inside factories.
+The objective of this project is to create a tic tac toe game by putting into practice what I have learned about factory functions and objects, making sure to have minimal global code by hiding them inside factories. Objects are used to control the flow of the game and that players are stored in objects. 
 
 Features: 
 - User has the option to enter their player name
