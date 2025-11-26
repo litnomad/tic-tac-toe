@@ -1,3 +1,5 @@
+
+
 function gameBoard() {
     let board = [];
     const rows = 3;
@@ -14,8 +16,26 @@ function gameBoard() {
 
     function updateBoard(row, column) {
 
+        if (row === 'reset' && column === 'reset') {
+
+            board = [];
+
+            for (i = 0; i < rows; i++) {
+                board.push([]);
+                for (j = 0; j < columns; j++) {
+                    board[i].push('');
+                }
+            }
+
+            console.log(board);
+
+            activePlayer = null;
+            text.innerHTML = '';
+
+        }
+        
         // will only add token to empty square
-        if (board[row][column] === '') {
+        if (row != 'reset' && column != 'reset' && board[row][column] === '') {
             board[row].splice(column, 1, activePlayer.token);
             console.log(board);
             console.log(`${activePlayer.player}` + '`s turn');
@@ -133,14 +153,9 @@ function gameBoard() {
 
     }
 
-    const reset = function () {
-        board = [];
-    }
-
     return {
         updateBoard,
-        getBoard,
-        reset
+        getBoard
     }
 
 }
@@ -210,13 +225,12 @@ text.style.color = 'red';
 
 // reset button clears board
 resetBtn.addEventListener('click', () => {
-    gameBoard().reset();
+    play.addToken('reset', 'reset');
 
     container.querySelectorAll('button').forEach((button) => {
         button.innerText = ''
     });
 
-    header.removeChild(text);
 })
 
 // start button changes inactive to active
