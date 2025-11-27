@@ -267,6 +267,10 @@ function gameController(firstPlayer = 'First player (x)') {
         else {
             text.innerHTML = 'Tie.';
             div.appendChild(text);
+
+            container.querySelectorAll('button').forEach((button) => {
+                button.classList.replace('active', 'inactive')
+            });
         }
     }
 
