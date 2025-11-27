@@ -253,36 +253,50 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else { false; }
-
+        else {
+            false;
+        }
     }
 
-    const addToken = (row, column) => {
-
-        playerSwitcher();
-
-        board.updateBoard(row, column);
-
-        // display next player's turn
-        if (activePlayer === players[0]) {
-            console.log(`${players[1].player}` + '`s turn');
-            text.innerHTML = `${players[1].player}` + '`s turn';
+    function checkTieCondition() {
+        const array = board.getBoard();
+        const newArray = array.flat();
+        if (newArray.includes('')) {
+             return false;
+        }
+        else {
+            text.innerHTML = 'Tie.';
             div.appendChild(text);
         }
-        else if (activePlayer === players[1]) {
-            console.log(`${players[0].player}` + '`s turn');
-            text.innerHTML = `${players[0].player}` + '`s turn';
-            div.appendChild(text);
-        }
-
-        checkWinCondition();
-
     }
 
-    return {
-        players,
-        addToken
+
+const addToken = (row, column) => {
+
+    playerSwitcher();
+
+    board.updateBoard(row, column);
+
+    // display next player's turn
+    if (activePlayer === players[0]) {
+        console.log(`${players[1].player}` + '`s turn');
+        text.innerHTML = `${players[1].player}` + '`s turn';
+        div.appendChild(text);
     }
+    else if (activePlayer === players[1]) {
+        console.log(`${players[0].player}` + '`s turn');
+        text.innerHTML = `${players[0].player}` + '`s turn';
+        div.appendChild(text);
+    }
+
+    checkWinCondition();
+    checkTieCondition();
+}
+
+return {
+    players,
+    addToken
+}
 
 }
 
