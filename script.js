@@ -1,6 +1,6 @@
+// gameBoard module creates board array and updates the array when a token is received
 // playable on the console 
-
-function gameBoard() {
+const gameBoard = (function () {
     let board = [];
     const rows = 3;
     const columns = 3;
@@ -50,13 +50,12 @@ function gameBoard() {
         updateBoard
     }
 
-}
+})();
 
 let activePlayer;
 
-function gameController(firstPlayer = 'First player (x)') {
-
-    const board = gameBoard();
+// gameController module creates players and tokens, tracks player turns, and checks win or tie conditions
+const gameController = (function (firstPlayer = 'First player (x)') {
 
     const players =
         [
@@ -91,7 +90,7 @@ function gameController(firstPlayer = 'First player (x)') {
     function checkWinCondition() {
 
         // first player
-        if (board.getBoard()[0][0] == players[0].token && board.getBoard()[0][1] == players[0].token && board.getBoard()[0][2] == players[0].token) {
+        if (gameBoard.getBoard()[0][0] == players[0].token && gameBoard.getBoard()[0][1] == players[0].token && gameBoard.getBoard()[0][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
@@ -102,7 +101,7 @@ function gameController(firstPlayer = 'First player (x)') {
             });
 
         }
-        else if (board.getBoard()[1][0] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[1][2] == players[0].token) {
+        else if (gameBoard.getBoard()[1][0] == players[0].token && gameBoard.getBoard()[1][1] == players[0].token && gameBoard.getBoard()[1][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
@@ -112,7 +111,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[2][0] == players[0].token && board.getBoard()[2][1] == players[0].token && board.getBoard()[2][2] == players[0].token) {
+        else if (gameBoard.getBoard()[2][0] == players[0].token && gameBoard.getBoard()[2][1] == players[0].token && gameBoard.getBoard()[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
@@ -122,7 +121,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][0] == players[0].token && board.getBoard()[1][0] == players[0].token && board.getBoard()[2][0] == players[0].token) {
+        else if (gameBoard.getBoard()[0][0] == players[0].token && gameBoard.getBoard()[1][0] == players[0].token && gameBoard.getBoard()[2][0] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
@@ -132,7 +131,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][1] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[2][1] == players[0].token) {
+        else if (gameBoard.getBoard()[0][1] == players[0].token && gameBoard.getBoard()[1][1] == players[0].token && gameBoard.getBoard()[2][1] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
@@ -142,7 +141,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][2] == players[0].token && board.getBoard()[1][2] == players[0].token && board.getBoard()[2][2] == players[0].token) {
+        else if (gameBoard.getBoard()[0][2] == players[0].token && gameBoard.getBoard()[1][2] == players[0].token && gameBoard.getBoard()[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
@@ -152,7 +151,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][0] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[2][2] == players[0].token) {
+        else if (gameBoard.getBoard()[0][0] == players[0].token && gameBoard.getBoard()[1][1] == players[0].token && gameBoard.getBoard()[2][2] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
@@ -162,7 +161,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][2] == players[0].token && board.getBoard()[1][1] == players[0].token && board.getBoard()[2][0] == players[0].token) {
+        else if (gameBoard.getBoard()[0][2] == players[0].token && gameBoard.getBoard()[1][1] == players[0].token && gameBoard.getBoard()[2][0] == players[0].token) {
             console.log(`${players[0].player}` + ' wins!');
 
             text.innerHTML = `${players[0].player}` + ' wins!';
@@ -173,7 +172,7 @@ function gameController(firstPlayer = 'First player (x)') {
             });
         }
         // second player
-        else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[0][1] == players[1].token && board.getBoard()[0][2] == players[1].token) {
+        else if (gameBoard.getBoard()[0][0] == players[1].token && gameBoard.getBoard()[0][1] == players[1].token && gameBoard.getBoard()[0][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
@@ -183,7 +182,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[1][0] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[1][2] == players[1].token) {
+        else if (gameBoard.getBoard()[1][0] == players[1].token && gameBoard.getBoard()[1][1] == players[1].token && gameBoard.getBoard()[1][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
@@ -193,7 +192,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[2][0] == players[1].token && board.getBoard()[2][1] == players[1].token && board.getBoard()[2][2] == players[1].token) {
+        else if (gameBoard.getBoard()[2][0] == players[1].token && gameBoard.getBoard()[2][1] == players[1].token && gameBoard.getBoard()[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
@@ -203,7 +202,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[1][0] == players[1].token && board.getBoard()[2][0] == players[1].token) {
+        else if (gameBoard.getBoard()[0][0] == players[1].token && gameBoard.getBoard()[1][0] == players[1].token && gameBoard.getBoard()[2][0] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
@@ -213,7 +212,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][1] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[2][1] == players[1].token) {
+        else if (gameBoard.getBoard()[0][1] == players[1].token && gameBoard.getBoard()[1][1] == players[1].token && gameBoard.getBoard()[2][1] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
@@ -223,7 +222,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][2] == players[1].token && board.getBoard()[1][2] == players[1].token && board.getBoard()[2][2] == players[1].token) {
+        else if (gameBoard.getBoard()[0][2] == players[1].token && gameBoard.getBoard()[1][2] == players[1].token && gameBoard.getBoard()[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
@@ -233,7 +232,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][0] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[2][2] == players[1].token) {
+        else if (gameBoard.getBoard()[0][0] == players[1].token && gameBoard.getBoard()[1][1] == players[1].token && gameBoard.getBoard()[2][2] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
@@ -243,7 +242,7 @@ function gameController(firstPlayer = 'First player (x)') {
                 button.classList.replace('active', 'inactive')
             });
         }
-        else if (board.getBoard()[0][2] == players[1].token && board.getBoard()[1][1] == players[1].token && board.getBoard()[2][0] == players[1].token) {
+        else if (gameBoard.getBoard()[0][2] == players[1].token && gameBoard.getBoard()[1][1] == players[1].token && gameBoard.getBoard()[2][0] == players[1].token) {
             console.log(`${players[1].player}` + ' wins!');
 
             text.innerHTML = `${players[1].player}` + ' wins!';
@@ -259,10 +258,10 @@ function gameController(firstPlayer = 'First player (x)') {
     }
 
     function checkTieCondition() {
-        const array = board.getBoard();
+        const array = gameBoard.getBoard();
         const newArray = array.flat();
         if (newArray.includes('')) {
-             return false;
+            return false;
         }
         else {
             text.innerHTML = 'Tie.';
@@ -274,37 +273,37 @@ function gameController(firstPlayer = 'First player (x)') {
         }
     }
 
-
-const addToken = (row, column) => {
-
-    playerSwitcher();
-
-    board.updateBoard(row, column);
-
-    // display next player's turn
-    if (activePlayer === players[0]) {
-        console.log(`${players[1].player}` + '`s turn');
-        text.innerHTML = `${players[1].player}` + '`s turn';
-        div.appendChild(text);
-    }
-    else if (activePlayer === players[1]) {
-        console.log(`${players[0].player}` + '`s turn');
-        text.innerHTML = `${players[0].player}` + '`s turn';
-        div.appendChild(text);
+    function displayPlayerTurn() {
+        if (activePlayer === players[0]) {
+            text.innerHTML = `${players[1].player}` + '`s turn';
+            div.appendChild(text);
+        }
+        else if (activePlayer === players[1]) {
+            text.innerHTML = `${players[0].player}` + '`s turn';
+            div.appendChild(text);
+        }
     }
 
-    checkWinCondition();
-    checkTieCondition();
-}
+    const addToken = (row, column) => {
 
-return {
-    players,
-    addToken
-}
+        playerSwitcher();
 
-}
+        gameBoard.updateBoard(row, column);
 
-const play = gameController();
+        displayPlayerTurn();
+
+        checkWinCondition();
+        checkTieCondition();
+    }
+
+    return {
+        players,
+        addToken
+    }
+
+})();
+
+const playRound = gameController;
 
 // DOM to allow user to play with the console through contents of the webpage starts here
 
@@ -319,7 +318,7 @@ text.style.color = 'black';
 
 // reset button 
 resetBtn.addEventListener('click', () => {
-    play.addToken('reset', 'reset');
+    playRound.addToken('reset', 'reset');
 
     container.querySelectorAll('button').forEach((button) => {
         button.innerText = ''
@@ -338,7 +337,7 @@ startBtn.addEventListener('click', () => {
 container.addEventListener('click', (e) => {
     let target = e.target;
     if (target.matches('button.active')) {
-        play.addToken(target.dataset.row, target.dataset.column);
+        playRound.addToken(target.dataset.row, target.dataset.column);
 
         if (!target.innerText) {
             target.innerText = activePlayer.token;
@@ -350,7 +349,7 @@ container.addEventListener('click', (e) => {
 submit.addEventListener('click', (e) => {
     const username = document.querySelector('input[id="name"]').value;
 
-    play.players[0].player = username;
+    playRound.players[0].player = username;
     document.querySelector('input[id="name"]').value = '';
 
     e.preventDefault();
