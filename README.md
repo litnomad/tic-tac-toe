@@ -15,4 +15,6 @@ Code:
 - CSS
 - Javascript
 
-See results here.
+---
+See results here
+https://htmlpreview.github.io/?https://github.com/litnomad/tic-tac-toe/blob/2f46afd36885545f0b22b29b0cc2d5142eb0954a/index.html
